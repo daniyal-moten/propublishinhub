@@ -309,8 +309,12 @@
             width: 100%;
             background: var(--light);
         }
-
-
+        
+        .citation-card .nav-tabs .nav-link.active {
+            background-color: #dc3545 !important; /* Bootstrap's danger color */
+            color: #fff !important;
+            border-color: #dc3545 #dc3545 #fff !important;
+        }
         /*** Feature ***/
         .feature {
             background: url(../img/bg-hero.png) center center no-repeat;
