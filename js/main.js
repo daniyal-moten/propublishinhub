@@ -171,4 +171,40 @@
         ]
     });
     
+document.addEventListener("DOMContentLoaded", function() {
+  // Target the main card and its children
+  const journeyCard = document.querySelector('.manuscript-journey-card');
+  const steps = document.querySelector('.manuscript-steps');
+  const stepsContent = document.querySelector('.manuscript-steps-content');
+  const stepItems = document.querySelectorAll('.manuscript-steps .list-group-item');
+
+  function animateSection(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        journeyCard.classList.add('animate-in');
+        steps.classList.add('animate-in');
+        stepsContent.classList.add('animate-in');
+        stepItems.forEach((item, idx) => {
+          item.classList.add('animate-in');
+          item.style.setProperty('--delay', (0.2 + idx * 0.1) + 's');
+        });
+        observer.disconnect();
+      }
+    });
+  }
+  function activateTab(tabId) {
+    const tabTrigger = new bootstrap.Tab(document.getElementById(tabId));
+    tabTrigger.show();
+    // Optional: Scroll into view
+    document.getElementById(tabId.replace('-tab', '')).scrollIntoView({ behavior: 'smooth' });
+  }
+
+  if (journeyCard) {
+    const observer = new IntersectionObserver(animateSection, {
+      threshold: 0.2
+    });
+    observer.observe(journeyCard);
+  }
+});
+
 })(jQuery);

@@ -5,9 +5,53 @@
             --light: #F4F7FE;
             --dark: #14183E;
         }
-        .body{
-            font-family: 'Poppins', sans-serif; 
+        h1, h2, h3, h4, h5, h6  {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+          }
+        p{
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+          
         }
+
+        /* slider */
+        .logo-slider {
+            overflow: hidden;
+            background-color: #f8f9fa;
+          }
+      
+          .logo-track {
+            display: flex;
+            width: calc(250px * 10); /* Adjust based on number of logos */
+            animation: scroll 20s linear infinite;
+          }
+      
+          .logo-slide {
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            
+          }
+      
+          .logo-slide img {
+            max-width: 100%;
+            height: auto;
+            max-height: 60px;
+            object-fit: contain;
+            
+          }
+      
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
 
         /*** Spinner ***/
         #spinner {
@@ -834,3 +878,154 @@
             color: #d32f2f !important;
             font-weight: bold;
         }
+        .brand-slider {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        .manuscript-journey-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 32px rgba(44,62,80,0.08);
+            padding: 2.5rem 2rem;
+            margin: 2rem 0;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .manuscript-steps {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.04);
+            border: 1px solid #eaeaea;
+        }
+        
+        .manuscript-steps .list-group-item {
+            border: none;
+            background: transparent;
+            font-size: 1.08rem;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            transition: background 0.2s, color 0.2s;
+            color: #222;
+        }
+        .manuscript-steps .list-group-item.active,
+        .manuscript-steps .list-group-item:hover {
+            background: #dc3545;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .manuscript-steps .list-group-item.ps-4 {
+            font-size: 0.98rem;
+            color: #888;
+        }
+        
+        .manuscript-steps-content {
+            padding: 1.5rem 2rem;
+        }
+        
+        .journal-stat-card {
+            background: #f4f7fe;
+            border-radius: 16px;
+            padding: 2rem 1rem;
+            text-align: center;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 0 2px 12px rgba(220,53,69,0.07);
+            color: #dc3545;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        .journal-stat-card .text-secondary {
+            color: #3a3a3a !important;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        
+        .cta-btn {
+            background: #dc3545;
+            color: #fff;
+            border-radius: 30px;
+            padding: 0.75rem 2.5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(220,53,69,0.12);
+            border: none;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .cta-btn:hover {
+            background: #b71c1c;
+            box-shadow: 0 8px 24px rgba(220,53,69,0.18);
+        }
+        .brand-slide {
+            flex: 0 0 auto;
+            width: 200px;
+            padding: 20px;
+            animation: slide 20s linear infinite;
+        }
+
+        .brand-slide img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .brand-slide img:hover {
+            filter: grayscale(0%);
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-1200px); /* 6 slides * 200px width */
+            }
+        }
+        /* Fade-in for the whole card */
+.manuscript-journey-card {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s ease-out 0.2s forwards;
+  }
+  
+  /* Fade-in for sidebar and main content */
+  .manuscript-steps, .manuscript-steps-content {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  /* Staggered fade-in for each step in the sidebar */
+  .manuscript-steps .list-group-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeInLeft 0.7s cubic-bezier(.77,0,.18,1) forwards;
+  }
+  .manuscript-steps .list-group-item:nth-child(1) { animation-delay: 0.2s; }
+  .manuscript-steps .list-group-item:nth-child(2) { animation-delay: 0.3s; }
+  .manuscript-steps .list-group-item:nth-child(3) { animation-delay: 0.4s; }
+  .manuscript-steps .list-group-item:nth-child(4) { animation-delay: 0.5s; }
+  .manuscript-steps .list-group-item:nth-child(5) { animation-delay: 0.6s; }
+  .manuscript-steps .list-group-item:nth-child(6) { animation-delay: 0.7s; }
+  .manuscript-steps .list-group-item:nth-child(7) { animation-delay: 0.8s; }
+  .manuscript-steps .list-group-item:nth-child(8) { animation-delay: 0.9s; }
+  .manuscript-steps .list-group-item:nth-child(9) { animation-delay: 1.0s; }
+  
+  @keyframes fadeInLeft {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  } 
+    

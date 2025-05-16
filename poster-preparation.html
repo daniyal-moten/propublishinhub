@@ -34,12 +34,14 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        .red-bullet-list {
-            list-style: disc inside;
+        ul.red-bullet-list {
+            list-style-type: disc !important;
+            list-style-position: inside !important;
             padding-left: 0;
+            margin-left: 0;
         }
 
-        .red-bullet-list li::marker {
+        ul.red-bullet-list li::marker {
             color: #dc3545;
             /* Bootstrap's danger color */
             font-size: 1.2em;
@@ -54,6 +56,15 @@
         .accordion-button:not(.collapsed)::after {
             filter: brightness(0) invert(1);
         }
+        /* Animation delays */
+        .wow-delay-1 { animation-delay: 0.2s; }
+        .wow-delay-2 { animation-delay: 0.4s; }
+        .wow-delay-3 { animation-delay: 0.6s; }
+        .wow-delay-4 { animation-delay: 0.8s; }
+        .wow-delay-5 { animation-delay: 1s; }
+        .wow-delay-6 { animation-delay: 1.2s; }
+        .wow-delay-7 { animation-delay: 1.4s; }
+        .wow-delay-8 { animation-delay: 1.6s; }
     </style>
 </head>
 
@@ -69,21 +80,21 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center wow fadeInLeft" href="index.html">
                 <img src="https://propublicationhub.com/images/common/logo-header.png" alt="Logo" height="40"
                     class="me-2">
                 <span class="fw-bold text-danger" style="font-size:1.5rem;"><span class="text-dark"></span></span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            <button class="navbar-toggler wow fadeInRight" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
                 aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainNavbar">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <li class="nav-item wow fadeInDown" data-wow-delay="0.1s">
                         <a class="nav-link active text-dark  " aria-current="page" href="index.html">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown wow fadeInDown" data-wow-delay="0.2s">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="primaryDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Primary Services
@@ -97,25 +108,29 @@
                             <li><a class="dropdown-item" href="palgarism-check.html">Plagiarism Check</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown wow fadeInDown" data-wow-delay="0.3s">
                         <a class="nav-link dropdown-toggle text-dark" href="#" id="secondaryDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Secondary Services
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="secondaryDropdown">
-                            <li><a class="dropdown-item " href="citation-booster.html">Citation Booster</a></li>
+                            <li><a class="dropdown-item" href="citation-booster.html">Citation Booster</a></li>
                             <li><a class="dropdown-item" href="grant-wtiting.html">Grant Writing</a></li>
                             <li><a class="dropdown-item text-danger" href="poster-preparation.html">Poster Preparation</a></li>
+                            <li><a class="dropdown-item" href="./index.html">Video Development</a></li>
+                            <li><a class="dropdown-item" href="./index.html">Statistical Analysis</a></li>
+                            <li><a class="dropdown-item" href="./index.html">Graphical Analysis</a></li>
+                            <li><a class="dropdown-item" href="./index.html">Abstract Analysis</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item wow fadeInDown" data-wow-delay="0.4s">
                         <a class="nav-link text-dark" href="#">Pricing</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item wow fadeInDown" data-wow-delay="0.5s">
                         <a class="nav-link text-dark" href="contact.html">Contact</a>
                     </li>
                 </ul>
-                <a href="#" class="btn btn-danger rounded-pill ms-lg-3 px-4 py-2 d-none d-lg-block">Get A Quote</a>
+                <a href="contact.html" class="btn btn-danger rounded-pill ms-lg-3 px-4 py-2 d-none d-lg-block wow fadeInRight">Get A Quote</a>
             </div>
         </div>
     </nav>
@@ -125,8 +140,8 @@
         <div class="container pt-5">
             <div class="row g-5 pt-2">
                 <div class="col-lg-12 text-center">
-                    <h1 class="display-5 text-white animated slideInDown">Poster Preparation</h1>
-                    <p class="text-white mb-4 animated slideInUp">Transform your research findings into a visually
+                    <h1 class="display-5 text-white wow fadeInDown">Poster Preparation</h1>
+                    <p class="text-white mb-4 wow fadeInUp">Transform your research findings into a visually
                         appealing poster.</p>
                 </div>
             </div>
@@ -136,19 +151,17 @@
     <div class="container mb-5">
         <div class="row">
             <div class="col-lg-8">
-                <h5 class="fw-bold mb-3">
-                    Make an impact at your next academic event with an eye-catching, ready-to-print poster that
-                    showcases your work.
-                </h5>
-                <p>
+                <h5 class="fw-bold mb-3 wow fadeInLeft">Make an impact at your next academic event with an eye-catching, ready-to-print poster that
+                    showcases your work.</h5>
+                <p class="wow fadeInLeft wow-delay-1">
                     Looking to promote your research at an upcoming conference or exhibition? Propublicationhub's Poster
                     Preparation service can help you do so more successfully. Taking the information and graphics
                     provided by you, our highly-skilled content specialists will condense the text, ensure language
                     accuracy, and then transform your findings into an eye-catching poster that summarizes your work
                     while meeting any event-specific requirements.
                 </p>
-                <p class="mb-2">A well designed poster will:</p>
-                <ul class="red-bullet-list">
+                <p class="mb-2 wow fadeInLeft wow-delay-2">A well designed poster will:</p>
+                <ul class="red-bullet-list wow fadeInLeft wow-delay-3">
                     <li class="fw-bold text-dark">Attract attention</li>
                     <li class="fw-bold text-dark">Make a great conversation starter with peers and colleagues</li>
                     <li class="fw-bold text-dark">Help you communicate your research quickly</li>
@@ -156,7 +169,7 @@
                 </ul>
             </div>
             <div class="col-lg-4">
-                <div class="border rounded p-3 mb-3">
+                <div class="border rounded p-3 mb-3 wow fadeInRight">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <span class="fw-bold text-dark">DELIVERY</span>
                         <span>5 business days</span>
@@ -166,25 +179,24 @@
                         <span>$250</span>
                     </div>
                 </div>
-                <div class="border rounded p-3">
+                <div class="border rounded p-3 wow fadeInRight wow-delay-1">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <span class="fw-bold text-dark">Sample 1</span>
-                        <a href="#" class="btn fw-bold btn-danger btn-sm"><i class="bi bi-eye"></i> View Sample</a>
+                        <a target="_blank" href="./assests/Sample-Preclinical-investigations-of-anti-glypican.pdf" class="btn fw-bold btn-danger btn-sm"><i class="bi bi-eye"></i> View Sample</a>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="fw-bold text-dark">Sample 2</span>
-                        <a href="#" class="btn fw-bold btn-danger btn-sm"><i class="bi bi-eye"></i> View Sample</a>
+                        <a target="_blank" href="./assests/Sample-Inactivation-of-the-dnaK-gene-in-Clostridium.pdf" class="btn fw-bold btn-danger btn-sm"><i class="bi bi-eye"></i> View Sample</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container mb-5">
-        <div class="">
-            <div class="">
+        <div class="wow fadeInUp">
+            <div class="wow fadeInUp wow-delay-1">
                 <h3 class="fw-bold mb-4">Who should use Poster Preparation Service?</h3>
-
-                <ul class="red-bullet-list">
+                <ul class="red-bullet-list wow fadeInLeft wow-delay-2">
                     <li>
                         <span class="fw-bold text-dark">Academicians</span> and students, looking to promote their work
                         (published or unpublished) at a conference, meeting, or exhibition
@@ -197,14 +209,13 @@
                         <span class="fw-bold text-dark">Pharmaceutical companies</span>wanting to announce the release of a new product or device at a conference or meeting
                     </li>
                 </ul>
-
             </div>
         </div>
     </div>
 
     <div class="container mb-5">
-        <h3>What do you receive?</h3>
-        <ul class="red-bullet-list">
+        <h3 class="wow fadeInLeft">What do you receive?</h3>
+        <ul class="red-bullet-list wow fadeInLeft wow-delay-1">
             <li>
                 A PDF file of your poster artwork prepared in Adobe InDesign.
             </li>
@@ -213,35 +224,35 @@
         </ul>
     </div>  
     <div class="container mb-5">
-        <h3>How does it work?</h3>
-        <ul class="red-bullet-list">
+        <h3 class="wow fadeInLeft">How does it work?</h3>
+        <ul class="red-bullet-list wow fadeInLeft wow-delay-1">
             <li>
-                Complete our online query form and provide us with the following: a link to the conference website and/or specific guidelines; high-resolution images of your institution's seal or logo; high-resolution images (jpeg, tiff) or vector/editable (eps, pdf, xls) files containing your figures/graphics; relevant text (title, author names, institutional affiliations, research summary); sequentially labeled figures and tables (with legends)
-            </li>
-            <li>
+                Complete our online query form and provide us with the following: a link to the conference website and/or specific guidelines, high-resolution images of your institution's seal or logo, high-resolution images (jpeg, tiff) or vector/editable (eps, pdf, xls) files containing your figures/graphics, relevant text (title, author names, institutional affiliations, research summary), sequentially labeled figures and tables (with legends)
+                
+            </li >
+            <li class="mt-2">
                 We review all materials and confirm your order
             </li>
-            <li>
+            <li class="mt-2">
                 A content expert edits the provided text for language accuracy and ensures text condensation to produce the first draft of your poster
             </li>
-            <li>
+            <li class="mt-2">
                 We review the file for design and send it to you for your approval
             </li>
-            <li>
+            <li class="mt-2">
                 Once we receive your feedback, we incorporate your suggestions
             </li>
-            <li>
+            <li class="mt-2">
                 The poster is re-checked before the final file is delivered to you
             </li>
-
         </ul>
     </div>
 
     <!-- INSERT_YOUR_CODE -->
     <div class="container mb-5">
-        <h3 class="fw-bold mb-4">Frequently Asked Questions <span class="text-danger">{ FAQs }</span></h3>
-        <div class="accordion" id="faqAccordion">
-            <div class="accordion-item mb-2 border rounded">
+        <h3 class="fw-bold mb-4 wow fadeInLeft">Frequently Asked Questions <span class="text-danger">{ FAQs }</span></h3>
+        <div class="accordion wow fadeInUp" id="faqAccordion">
+            <div class="accordion-item mb-2 border rounded wow fadeInUp">
                 <h2 class="accordion-header" id="faqHeadingOne">
                     <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
                         Q1.Who will create the poster for me?
@@ -253,7 +264,7 @@
                     </div>
                 </div>
             </div>
-            <div class="accordion-item mb-2 border rounded">
+            <div class="accordion-item mb-2 border rounded wow fadeInUp wow-delay-1">
                 <h2 class="accordion-header" id="faqHeadingTwo">
                     <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
                         Q2. Does my manuscript have to be published before I use this service?
@@ -265,7 +276,7 @@
                     </div>
                 </div>
             </div>
-            <div class="accordion-item mb-2 border rounded  ">
+            <div class="accordion-item mb-2 border rounded wow fadeInUp wow-delay-2">
                 <h2 class="accordion-header" id="faqHeadingThree">
                     <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
                         Q3. When will I see the first draft?
@@ -350,6 +361,10 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        // Initialize WOW.js
+        new WOW().init();
+    </script>
 </body>
 
 </html>
