@@ -32,6 +32,43 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .service-item {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(220, 53, 69, 0.2);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(220, 53, 69, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(220, 53, 69, 0.1);
+        }
+
+        .service-item:hover .service-icon {
+            background: #dc3545;
+            color: #fff !important;
+            border-color: #dc3545;
+        }
+    </style>
+
+   
 </head>
 
 <body>
@@ -548,7 +585,7 @@
     <!-- Publishing journey of a manuscript END -->
 
     <!-- Service Start -->
-    <div class="container-fluid bg-light mt-5 py-5 services">
+    <div class="container-fluid  mt-5 py-5 services">
         <div class="srvices text-center align-items-center">
             <h1 class="mb-4">Our Services</h1>
             <p class="mb-4">Let's have a quick look at the publishing journey of a manuscript and learn how Paper
@@ -557,93 +594,84 @@
         </div>
         <div class="container py-5">
 
-
-            <div class="">
-                <div class="row g-2">
-                    <!-- Service 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
-                            <div class="service-icon btn-square mx-auto mb-3 text-danger">
-                                <i class="fa fa-file fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Journal Selection</h5>
-                            <p>Smart journal recommendations based on suitability of your paper to help you decide which
-                                journal to submit to.</p>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item bg-white d-flex flex-column justify-content-center text-center rounded h-100 p-4 shadow-sm">
+                        <div class="service-icon btn-square mx-auto mb-4 text-danger">
+                            <i class="fa fa-file fa-3x"></i>
                         </div>
+                        <h5 class="mb-3 fw-bold">Journal Selection</h5>
+                        <p class="mb-0">Smart journal recommendations based on suitability of your paper to help you decide which journal to submit to.</p>
                     </div>
-                    <!-- Service 2 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
-                            <div class="service-icon btn-square mx-auto mb-3 text-danger">
-                                <i class="fa fa-search fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Pre-Submission Peer Review</h5>
-                            <p>Manuscript review by a subject expert, focused on soundness of study design, reporting of
-                                method, significance to field, ethical soundness, and sufficiency of data analysis.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item bg-white d-flex flex-column justify-content-center text-center rounded h-100 p-4 shadow-sm">
+                        <div class="service-icon btn-square mx-auto mb-4 text-danger">
+                            <i class="fa fa-search fa-3x"></i>
                         </div>
+                        <h5   class="mb-3 fw-bold">Pre-Submission Peer Review</h5>
+                        <p class="mb-0">Manuscript review by a subject expert, focused on soundness of study design, reporting of method, significance to field, ethical soundness, and sufficiency of data analysis.</p>
                     </div>
-                    <!-- Service 3 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
-                            <div class="service-icon btn-square mx-auto mb-3 text-danger">
-                                <i class="fa fa-pen fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Substantive Editing</h5>
-                            <p>Substantive Editing is specifically tailored for authors looking to submit their work to
-                                high-impact peer-reviewed international journals.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item bg-white d-flex flex-column justify-content-center text-center rounded h-100 p-4 shadow-sm">
+                        <div class="service-icon btn-square mx-auto mb-4 text-danger">
+                            <i class="fa fa-pen fa-3x"></i>
                         </div>
+                        <h5 class="mb-3 fw-bold">Substantive Editing</h5>
+                        <p class="mb-0">Substantive Editing is specifically tailored for authors looking to submit their work to high-impact peer-reviewed international journals.</p>
                     </div>
-                    <!-- Service 4 -->
-                    <div class="col-md-12 col-lg-12">
-                        <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
-                            <div class="service-icon btn-square mx-auto mb-3 text-danger">
-                                <i class="fa fa-pen-square fa-2x text-danger"></i>
-                            </div>
-                            <h5 class="">Manuscript Formatting and Artwork Editing Services</h5>
-                            <p>Professional manuscript formatting and artwork correction/formatting as per journal
-                                requirements.</p> 
-                            <div class="flex manu align-items-center">
-                                <span class=" p-2">Formatting</span>
-                                <span class="p-2">Artwork Editing</span>
-                                <span class="p-2">Proofreading </span>
-                                <span class=" p-2">Cover letter </span>
-                            </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-md-12 col-lg-12">
+                    <div class="service-item bg-white d-flex flex-column justify-content-center text-center rounded h-100 p-4 shadow-sm">
+                        <div class="service-icon btn-square mx-auto mb-4 text-danger">
+                            <i class="fa fa-pen-square fa-3x text-danger"></i>
                         </div>
-                    </div>
-                    <!-- Service 5 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
-                            <div class="service-icon btn-square mx-auto mb-3 text-danger">
-                                <i class="fa fa-retweet fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Peer Review Process</h5>
-                            <p>Get support during the peer review process to address reviewer comments effectively.</p>
-                        </div>
-                    </div>
-                    <!-- Service 6 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
-                            <div class="service-icon btn-square mx-auto mb-3 text-danger">
-                                <i class="fa fa-upload fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Journal Submission</h5>
-                            <p>Receive guidance on next steps after the journal's decision, whether acceptance or
-                                revision.</p>
-                        </div>
-                    </div>
-                    <!-- Service 7 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="service-item d-flex flex-column justify-content-center text-center rounded h-100">
-                            <div class="service-icon btn-square mx-auto mb-3 text-danger">
-                                <i class="fa fa-headset fa-2x"></i>
-                            </div>
-                            <h5 class="mb-3">Publication Support</h5>
-                            <p>Comprehensive support for all your publication needs, from start to finish.</p>
+                        <h5 class="mb-3 fw-bold">Manuscript Formatting and Artwork Editing Services</h5>
+                        <p class="mb-4">Professional manuscript formatting and artwork correction/formatting as per journal requirements.</p>
+                        <div class="d-flex justify-content-center gap-4">
+                            <span class="badge bg-light text-dark p-3">Formatting</span>
+                            <span class="badge bg-light text-dark p-3">Artwork Editing</span>
+                            <span class="badge bg-light text-dark p-3">Proofreading</span>
+                            <span class="badge bg-light text-dark p-3">Cover letter</span>
                         </div>
                     </div>
                 </div>
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item bg-white d-flex flex-column justify-content-center text-center rounded h-100 p-4 shadow-sm">
+                        <div class="service-icon btn-square mx-auto mb-4 text-danger">
+                            <i class="fa fa-retweet fa-3x"></i>
+                        </div>
+                        <h5 class="mb-3 fw-bold">Peer Review Process</h5>
+                        <p class="mb-0">Get support during the peer review process to address reviewer comments effectively.</p>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item bg-white d-flex flex-column justify-content-center text-center rounded h-100 p-4 shadow-sm">
+                        <div class="service-icon btn-square mx-auto mb-4 text-danger">
+                            <i class="fa fa-upload fa-3x"></i>
+                        </div>
+                        <h5 class="mb-3 fw-bold">Journal Submission</h5>
+                        <p class="mb-0">Receive guidance on next steps after the journal's decision, whether acceptance or revision.</p>
+                    </div>
+                </div>
+                <!-- Service 7 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-item bg-white d-flex flex-column justify-content-center text-center rounded h-100 p-4 shadow-sm">
+                        <div class="service-icon btn-square mx-auto mb-4 text-danger">
+                            <i class="fa fa-headset fa-3x"></i>
+                        </div>
+                            <h5 class="mb-3 fw-bold">Publication Support</h5>
+                        <p class="mb-0">Comprehensive support for all your publication needs, from start to finish.</p>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
     <!-- Service End -->
@@ -772,8 +800,8 @@
                             <div class="client-name">Tomokazu Shohji</div>
                             <div class="client-company">Jikei University School of Medicine</div>
                             <p class="testimonial-text">
-                                I fully admire and trust Propublicationhub’s reputation and quality. I especially chose
-                                Propublicationhub’s packages as no other company offers such a service.
+                                I fully admire and trust Propublicationhub's reputation and quality. I especially chose
+                                Propublicationhub's packages as no other company offers such a service.
                                 Propublicationhub editors are extremely trustworthy and I even tell my colleagues and
                                 students to use their service. Their service quality and timely delivery is very helpful
                                 in meeting journal deadlines. I am glad that Propublicationhub offers packages at
