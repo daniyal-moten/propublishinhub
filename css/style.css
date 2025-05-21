@@ -263,21 +263,27 @@
             margin-bottom: 2%;
         }
         
-        .hero-header{ 
+        .cover-hero{ 
             padding-top: 10% !important;
             z-index: 0;
             background-color: #0A0A0A;
             height: 85vh !important;
             background-image: url('../img/cover.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: left;
             background-repeat: no-repeat;
             position: relative;
            
             
         }
+        .hero-header{
+        background-color: #0A0A0A !important; 
+        }
+        .hero-header img{
+            transform: scaleX(1);
+        }
 
-        .hero-header::before {
+        .cover-hero::before {
             content: '';
             position: absolute;
             top: 0;
