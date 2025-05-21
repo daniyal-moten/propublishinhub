@@ -10,7 +10,7 @@
         }, 1);
     };
     spinner();
-    // GPT CROUSEL
+    // carousel
     document.addEventListener('DOMContentLoaded', function() {
         const carousel = document.querySelector('.carousel');
         const slides = document.querySelectorAll('.slide');
@@ -60,37 +60,60 @@
           }
         }
         
-        // Update carousel position and active dot
-        function updateCarousel() {
-          carousel.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-          
-          // Update active dot
-          dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-              dot.classList.add('active');
-            } else {
-              dot.classList.remove('active');
-            }
+        // Update carousel position and active dot with fade effect
+        function updateCarousel(newIndex = currentIndex, direction = 1) {
+          // Remove fade classes from all slides
+          slides.forEach(slide => {
+            slide.classList.remove('fade-in', 'fade-out');
           });
+
+          // Fade out the current slide
+          slides[currentIndex].classList.add('fade-out');
+
+          setTimeout(() => {
+            // Move to the new slide
+            carousel.style.transform = `translateX(-${newIndex * slideWidth}%)`;
+
+            // Fade in the new slide
+            slides[newIndex].classList.add('fade-in');
+
+            // Update active dot
+            dots.forEach((dot, index) => {
+              if (index === newIndex) {
+                dot.classList.add('active');
+              } else {
+                dot.classList.remove('active');
+              }
+            });
+
+            // Remove fade classes after transition
+            setTimeout(() => {
+              slides.forEach(slide => {
+                slide.classList.remove('fade-in', 'fade-out');
+              });
+            }, 300);
+          }, 300);
+
+          currentIndex = newIndex;
         }
         
-        // Go to next slide
+        // Go to next slide with fade
         function nextSlide() {
-          currentIndex = (currentIndex + 1) % slides.length;
-          updateCarousel();
+          let newIndex = (currentIndex + 1) % slides.length;
+          updateCarousel(newIndex, 1);
           resetAutoSlide();
         }
         
-        // Go to previous slide
+        // Go to previous slide with fade
         function prevSlide() {
-          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-          updateCarousel();
+          let newIndex = (currentIndex - 1 + slides.length) % slides.length;
+          updateCarousel(newIndex, -1);
           resetAutoSlide();
         }
         
         // Start auto-sliding
         function startAutoSlide() {
-          autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+          autoSlideInterval = setInterval(nextSlide, 1500); 
         }
         
         // Reset auto-slide timer
@@ -112,14 +135,9 @@
         });
         
         // Pause auto-sliding when user hovers over the carousel
-        carousel.addEventListener('mouseenter', function() {
-          clearInterval(autoSlideInterval);
-        });
         
         // Resume auto-sliding when user leaves the carousel
-        carousel.addEventListener('mouseleave', function() {
-          startAutoSlide();
-        });
+        
       });
     //end
     // Initiate the wowjs
